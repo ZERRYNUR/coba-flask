@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Flask Identifikasi Diabetes</title>
+  </head>
+  <body>
+    <h1>Halaman Utama Identifikasi Diabetes</h1>
+    <form action="{{ url_for('predict') }}" method="post">
+      <table>
+        <tr>
+          <td><label>Input Pregnancies :</label></td>
+          <td><input type="text" name="x1" /></td>
+        </tr>
+        <tr>
+          <td><label>Input Glucose :</label></td>
+          <td><input type="text" name="x2" /></td>
+        </tr>
+        <tr>
+          <td><label>Input Insulin :</label></td>
+          <td><input type="text" name="x3" /></td>
+        </tr>
+        <tr>
+          <td><label>Input BMI :</label></td>
+          <td><input type="text" name="x4" /></td>
+        </tr>
+        <tr>
+          <td><label>Input Diabetes :</label></td>
+          <td><input type="text" name="x5" /></td>
+        </tr>
+        <tr>
+          <td><label>Input Age :</label></td>
+          <td><input type="number" name="x6" /></td>
+        </tr>
+      </table>
+      <button type="submit">Hasil Prediksi</button>
+    </form>
+    <p>Hasil Prediksi Diabetes Adalah</p>
+    <br />
+    <p>Hasil Prediksi : {{ hasil }}</p>
+    <br />
+    <p>Pregnancies : {{ x1 }}</p>
+    <br />
+    <p>Glucose : {{ x2 }}</p>
+    <br />
+    <p>Insulin : {{ x3 }}</p>
+    <br />
+    <p>BMI : {{ x4 }}</p>
+    <br />
+    <p>Diabetes : {{ x5 }}</p>
+    <br />
+    <p>Age : {{ x6 }}</p>
+    <br />
+    <!-- <p>Akurasi Prediksi : {{ accuracy }}</p> -->
+  </body>
+</html>
