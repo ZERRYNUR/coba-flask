@@ -34,16 +34,16 @@ def predict():
 
     return render_template('index.html', hasil=output,x1=x1,x2=x2,x3=x3,x4=x4,x5=x5,x6=x6)
 
-@app.route('/evaluate')
-def evaluate():
-    # Jika Anda memiliki data uji
-    X_test = model_file.drop('target_column', axis=1)
-    y_test = model_file['target_column']
-    predictions = model.predict(X_test)
+# @app.route('/evaluate')
+# def evaluate():
+#     # Jika Anda memiliki data uji
+#     X_test = model_file.drop('target_column', axis=1)
+#     y_test = model_file['target_column']
+#     predictions = model.predict(X_test)
 
-    # Akurasi prediksi
-    accuracy = accuracy_score(y_test, predictions)
-    return render_template('index.html', accuracy=accuracy)
+#     # Akurasi prediksi
+#     accuracy = accuracy_score(y_test, predictions)
+#     return render_template('index.html', accuracy=accuracy)
 
 if __name__ == '__main__':
     app.run(debug=True)
